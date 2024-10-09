@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Random;
+import java.util.Scanner;
 
 public class JavasSortAula {
     
@@ -49,11 +50,24 @@ public class JavasSortAula {
         for(Pessoa p: vetorPessoas)
             System.out.println(p);
        
-       */int tamanho = 10, min = 1, max =10000;
+       */int tamanho = 10, min = 1, max =10;
        Integer[] vetor1 = geraArrayAleatorio(tamanho,min,max);
        Integer[] vetor2 = new Integer[tamanho];
        Integer[] vetor3 = new Integer[tamanho];
-       
+       Scanner scanner = new Scanner(System.in);
+
+        for(int i=0;i<tamanho;i++){
+            System.out.print("|"+vetor1[i]);
+        }
+        System.out.println(" ");
+        System.out.println("Valor para busca:");
+        Integer x = scanner.nextInt();
+        Search busca = new Search();
+
+        System.out.println("Busca Linear:");
+        System.out.println("Posição: "+busca.linearSearch(vetor1,x));
+        System.out.println("Comparações: "+busca.getContaComparacoes());
+
        for(int i=0;i<tamanho;i++){
            vetor2[i]=vetor1[i];
            vetor3[i] = vetor1[i];
@@ -84,6 +98,16 @@ public class JavasSortAula {
        tfinal = System.currentTimeMillis();
        tempo = tfinal - inicio;
        System.out.println("Tempo do Insertion Sort: "+tempo+" Comparações: "+isort.getContaComparacoes());
+
+        for(int i=0;i<tamanho;i++){
+            System.out.print("|"+vetor1[i]);
+        }
+        System.out.println(" ");
+        System.out.println("Busca Binaria:");
+        System.out.println("Posição: "+busca.binarySearch(vetor1,x));
+        System.out.println("Comparações: "+busca.getContaComparacoes());
+
+
     }
     
 }
