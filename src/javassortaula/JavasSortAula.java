@@ -29,7 +29,9 @@ public class JavasSortAula {
     }
 
     public static void main(String[] args) {
-        int tamanho = 1000, min = 1, max = 10;
+        // int tamanho = 10;//, min = 1, max = 50;
+        //Integer[] vetor1 = {34, 8, 64, 51, 32, 21,12,35,69,45};
+        int tamanho = 1_000, min = 1, max = 50;
         Integer[] vetor1 = geraArrayAleatorio(tamanho, min, max);
         Integer[] vetor2 = new Integer[tamanho];
         Integer[] vetor3 = new Integer[tamanho];
@@ -44,9 +46,10 @@ public class JavasSortAula {
         Integer x = scanner.nextInt();
         Search busca = new Search();
 
-        System.out.println("Busca Linear:");
+        System.out.println("\nBusca Linear:");
         System.out.println("Posição: " + busca.linearSearch(vetor1, x));
         System.out.println("Comparações: " + busca.getContaComparacoes());
+        System.out.println(" ");
 
         // Cópia dos vetores
         for (int i = 0; i < tamanho; i++) {
@@ -66,6 +69,7 @@ public class JavasSortAula {
         long inicio = System.currentTimeMillis();
         bsort.sort(vetor1, comparatorInteiro);
         long tfinal = System.currentTimeMillis();
+        //long tfinal = System.nanoTime();
         long tempo = tfinal - inicio;
         System.out.println("Tempo do Bubble Sort: " + tempo + " Comparações: " + bsort.getContaComparacoes());
 
@@ -89,6 +93,7 @@ public class JavasSortAula {
         tfinal = System.currentTimeMillis();
         tempo = tfinal - inicio;
         System.out.println("Tempo do Shell Sort: " + tempo + " Comparações: " + shellSort.getContaComparacao());
+        System.out.println(" ");
 
         for (int i = 0; i < tamanho; i++) {
             System.out.print("|" + vetor4[i]);
