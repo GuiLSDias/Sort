@@ -13,7 +13,7 @@ public class ShellSort<T> {
         int n = array.length;
 
         for (int gap = n / 2; gap > 0; gap /= 2) {
-           System.out.println("\nGap atual: " + gap);
+           //System.out.println("\nGap atual: " + gap);
             for (int i = gap; i < n; i++) {
                 T temp = array[i];
                 int j;
@@ -23,11 +23,11 @@ public class ShellSort<T> {
                 }
                 array[j] = temp;
             }
-            System.out.print("Estado do array após gap " + gap + ": ");
-            for (T item : array) {
+            //System.out.print("Estado do array após gap " + gap + ": ");
+           /* for (T item : array) {
                 System.out.print(item + " ");
             }
-            System.out.println();
+            System.out.println();*/
         }
     }
 

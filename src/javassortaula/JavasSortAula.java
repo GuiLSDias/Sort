@@ -1,6 +1,7 @@
 
 package javassortaula;
 
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -31,17 +32,19 @@ public class JavasSortAula {
     public static void main(String[] args) {
         // int tamanho = 10;//, min = 1, max = 50;
         //Integer[] vetor1 = {34, 8, 64, 51, 32, 21,12,35,69,45};
-        int tamanho = 1_000, min = 1, max = 50;
+        int tamanho = 10_000, min = 1, max = 1000;
         Integer[] vetor1 = geraArrayAleatorio(tamanho, min, max);
         Integer[] vetor2 = new Integer[tamanho];
         Integer[] vetor3 = new Integer[tamanho];
         Integer[] vetor4 = new Integer[tamanho];
         Scanner scanner = new Scanner(System.in);
 
+       /* System.out.println("\nVetor gerado: ");
         for (int i = 0; i < tamanho; i++) {
             System.out.print("|" + vetor1[i]);
-        }
-        System.out.println(" ");
+
+        }*/
+     /*   System.out.println(" ");
         System.out.println("Valor para busca:");
         Integer x = scanner.nextInt();
         Search busca = new Search();
@@ -49,7 +52,7 @@ public class JavasSortAula {
         System.out.println("\nBusca Linear:");
         System.out.println("Posição: " + busca.linearSearch(vetor1, x));
         System.out.println("Comparações: " + busca.getContaComparacoes());
-        System.out.println(" ");
+        System.out.println(" ");*/
 
         // Cópia dos vetores
         for (int i = 0; i < tamanho; i++) {
@@ -71,7 +74,8 @@ public class JavasSortAula {
         long tfinal = System.currentTimeMillis();
         //long tfinal = System.nanoTime();
         long tempo = tfinal - inicio;
-        System.out.println("Tempo do Bubble Sort: " + tempo + " Comparações: " + bsort.getContaComparacoes());
+        System.out.println(" ");
+        System.out.println("\nTempo do Bubble Sort: " + tempo + " Comparações: " + bsort.getContaComparacoes());
 
         // Selection Sort
         inicio = System.currentTimeMillis();
@@ -92,16 +96,17 @@ public class JavasSortAula {
         shellSort.sort(vetor4, comparatorInteiro);
         tfinal = System.currentTimeMillis();
         tempo = tfinal - inicio;
-        System.out.println("Tempo do Shell Sort: " + tempo + " Comparações: " + shellSort.getContaComparacao());
+        System.out.println("\nTempo do Shell Sort: " + tempo + " Comparações: " + shellSort.getContaComparacao());
         System.out.println(" ");
 
+       /* System.out.println("Vetor ordenado:");
         for (int i = 0; i < tamanho; i++) {
             System.out.print("|" + vetor4[i]);
         }
-        System.out.println(" ");
+     /*   System.out.println(" ");
         System.out.println("Busca Binaria:");
         System.out.println("Posição: " + busca.binarySearch(vetor1, x));
-        System.out.println("Comparações: " + busca.getContaComparacoes());
+        System.out.println("Comparações: " + busca.getContaComparacoes());*/
     }
 
 }
